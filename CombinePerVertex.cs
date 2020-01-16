@@ -7,19 +7,12 @@ using UnityEngine.UI;
 public class CombinePerVertex : MonoBehaviour
 {
     public static List<Transform> transforms;
-    public Button combineMeshButton;
     List<Vector3> vert;
     List<Vector3> norm;
     List<int> triag;
     List<Vector2> uv;
     List<Vector2> uv2;
     Texture2D[] ordinaryTextures;
-    ObjectSelection obj;
-
-    void Start()
-    {
-        obj = ObjectSelection.Instance;
-    }
 
     private void InitializeList()
     {
@@ -32,13 +25,10 @@ public class CombinePerVertex : MonoBehaviour
 
     public void CombineMeshes()
     {
-        obj.Deselect();
-        combineMeshButton.GetComponent<Button>().interactable = false;
         InitializeList();
-        resetChildren();
         Transform[] t = GetComponentsInChildren<Transform>();
         transforms = new List<Transform>();
-        for (int i = 1; i < t.Length; i++)
+        for (int i = 1; i < t.Length; i++)//only the child transforms are added to the list.
             transforms.Add(t[i]);
         Debug.LogFormat("Number of objects:{0}", transforms.Count);
         ordinaryTextures = new Texture2D[transforms.Count];
@@ -74,14 +64,8 @@ public class CombinePerVertex : MonoBehaviour
         mesh.uv2 = uv2.ToArray();
         CreateTextureArray(mesh);
     }
-
-    private void resetChildren()
-    {
-        if(transforms!=null)
-        for (int i = 0; i < transforms.Count; i++)
-            transforms[i].gameObject.SetActive(true);
-    }
-
+    
+    //create a texture array to be used in conjunction with a customshader TextureArrayShader
     private void CreateTextureArray(Mesh mesh)
     {
 
@@ -95,13 +79,8 @@ public class CombinePerVertex : MonoBehaviour
         }
         texture2DArray.Apply();
         GetComponent<Renderer>().material.SetTexture("_MainTex", texture2DArray);
+        //add collider component if needed
         this.gameObject.AddComponent<MeshCollider>();
         GetComponent<MeshCollider>().sharedMesh = mesh;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
