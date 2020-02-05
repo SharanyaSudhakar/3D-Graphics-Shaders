@@ -1,4 +1,1 @@
-﻿  App.cpp
-     Creating library x64\Debug\cubesd.lib and object x64\Debug\cubesd.exp
-waved.lib(wave.obj) : warning LNK4099: PDB 'wave.lib.pdb' was not found with 'waved.lib(wave.obj)' or at 'D:\WORKING FOLDER\codex-graphics\cubes\x64\Debug\wave.lib.pdb'; linking object as if no debug info
-  main.vcxproj -> D:\WORKING FOLDER\codex-graphics\cubes\x64\Debug\cubesd.exe
+﻿  main.vcxproj -> D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\CubesProj\x64\Debug\cubesd.exe

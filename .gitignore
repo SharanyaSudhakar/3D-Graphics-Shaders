@@ -1,0 +1,8 @@
+x64/**
+temp/**
+build/**
+**/Debug/**
+Release
+*.vs
+data-files/log.txt
+data-files/g3d-license.txt

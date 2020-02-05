@@ -1,13 +1,13 @@
 Application Log
-Start: Wed Feb  5 08:59:52 2020
+Start: Wed Feb  5 09:28:04 2020
 
 WARNING: AudioDevice is not enabled. Set G3DSpecification::audio = true before invoking initGLG3D() to enable audio.
-Initializing System::findDataFile took 0.004004s
+Initializing System::findDataFile took 0.003762s
 
 Entering GApp::GApp()
-cwd = D:\WORKING FOLDER\codex-graphics\cubes\data-files
-System::setAppDataDir("D:\WORKING FOLDER\codex-graphics\cubes\data-files")
-Initializing System::findDataFile took 0.003477s
+cwd = D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\CubesProj\data-files
+System::setAppDataDir("D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\CubesProj\data-files")
+Initializing System::findDataFile took 0.002435s
 Setting video mode
 wglSwapIntervalEXT(0);
 Setting initial rendering state.
@@ -131,8 +131,8 @@ GPU Supports OpenGL 4.1 or later    yes - OpenGL version on this driver is 4.6
 Done initializing RenderDevice.
 Network StartupSystem = { 
     App { 
-        Name = "D:\\WORKING FOLDER\\codex-graphics\\cubes\\x64\\Debug\\cubesd.exe"
-        cwd = "D:\\WORKING FOLDER\\codex-graphics\\cubes\\data-files"
+        Name = "D:\\WORKING FOLDER\\3D-Graphics-Shaders\\Codex-Graphics\\CubesProj\\x64\\Debug\\cubesd.exe"
+        cwd = "D:\\WORKING FOLDER\\3D-Graphics-Shaders\\Codex-Graphics\\CubesProj\\data-files"
     } 
     
     OS { 
@@ -685,6 +685,18 @@ Vertex info
 
 
 
+
+Vertex info
+-----------
+1(39) : warning C7050: "tex0" might be used before being initialized
+1(39) : warning C7050: "tex1" might be used before being initialized
+
+
+
+
+
+
+
 _____________________________________________________
 
     ###    Files Used    ###
@@ -702,8 +714,9 @@ avutil-55.dll
 swresample-2.dll
 swscale-4.dll
 fmod64.dll
-D:/WORKING FOLDER/codex-graphics/cubes/data-files/icon.png
-D:/WORKING FOLDER/codex-graphics/cubes/data-files/log.txt
+D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/CubesProj/data-files/./test.Scene.Any
+D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/CubesProj/data-files/icon.png
+D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/CubesProj/data-files/log.txt
 c:/g3d/G3D10/data-files/font/arial.fnt
 c:/g3d/G3D10/data-files/font/console-small.fnt
 c:/g3d/G3D10/data-files/font/greek.fnt
@@ -768,8 +781,36 @@ c:/g3d/data10/common/cubemap/cornellbox/empty-RG-NZ.png
 c:/g3d/data10/common/cubemap/cornellbox/empty-RG-PX.png
 c:/g3d/data10/common/cubemap/cornellbox/empty-RG-PY.png
 c:/g3d/data10/common/cubemap/cornellbox/empty-RG-PZ.png
+c:/g3d/data10/common/cubemap/noonclouds/noonclouds_bk.png
+c:/g3d/data10/common/cubemap/noonclouds/noonclouds_dn.png
+c:/g3d/data10/common/cubemap/noonclouds/noonclouds_ft.png
+c:/g3d/data10/common/cubemap/noonclouds/noonclouds_lf.png
+c:/g3d/data10/common/cubemap/noonclouds/noonclouds_rt.png
+c:/g3d/data10/common/cubemap/noonclouds/noonclouds_up.png
+c:/g3d/data10/common/cubemap/uffizi/uffizi+x.jpg
+c:/g3d/data10/common/cubemap/uffizi/uffizi+y.jpg
+c:/g3d/data10/common/cubemap/uffizi/uffizi+z.jpg
+c:/g3d/data10/common/cubemap/uffizi/uffizi-x.jpg
+c:/g3d/data10/common/cubemap/uffizi/uffizi-y.jpg
+c:/g3d/data10/common/cubemap/uffizi/uffizi-z.jpg
+c:/g3d/data10/common/cubemap/whiteroom/whiteroom-NX.png
+c:/g3d/data10/common/cubemap/whiteroom/whiteroom-NY.png
+c:/g3d/data10/common/cubemap/whiteroom/whiteroom-NZ.png
+c:/g3d/data10/common/cubemap/whiteroom/whiteroom-PX.png
+c:/g3d/data10/common/cubemap/whiteroom/whiteroom-PY.png
+c:/g3d/data10/common/cubemap/whiteroom/whiteroom-PZ.png
+c:/g3d/data10/common/ifs/square.ifs
 c:/g3d/data10/common/model/CornellBox/CornellBox.zip
 c:/g3d/data10/common/model/CornellBox/CornellBox.zip/CornellBox-Original.mtl
 c:/g3d/data10/common/model/CornellBox/CornellBox.zip/CornellBox-Original.obj
+c:/g3d/data10/common/model/cube/cube.obj
+c:/g3d/data10/common/model/cube/default.mtl
 c:/g3d/data10/common/scene/G3D_Simple_Cornell_Box_(Area_Light).Scene.Any
+c:/g3d/data10/game/model/eracoon-lowpoly-vehicle/car-groupc-2.obj
+c:/g3d/data10/game/model/eracoon-lowpoly-vehicle/car.mtl
+c:/g3d/data10/research/model/sportsCar/sportsCar.zip
+c:/g3d/data10/research/model/sportsCar/sportsCar.zip/sportsCar.mtl
+c:/g3d/data10/research/model/sportsCar/sportsCar.zip/sportsCar.obj
+c:/g3d/data10/research/scene/G3D_Simple_Opening_Door.Scene.Any
+c:/g3d/data10/research/scene/G3D_Sports_Car_(White).Scene.Any
 
