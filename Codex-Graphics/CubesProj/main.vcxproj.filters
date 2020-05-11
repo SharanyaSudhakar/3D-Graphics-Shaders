@@ -20,6 +20,9 @@
       <Filter>Scene Files</Filter>
     </None>
     <None Include="journal\journal.md.html" />
+    <None Include="data-files\scene\whiteCube.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">

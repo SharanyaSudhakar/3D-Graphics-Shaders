@@ -10,4 +10,4 @@ Project from Fundamentals of Computer Graphics, Chapter 3: Raster Images.
 ### Codex-Projects
 The projects from http://graphicscodex.com/ is implemented here. The recomended tools 
 C++ and G3D with OpenGL is used. <br>
-__Future Directions:__ The projects will be imploemented using _Unity_ as well.
+__Future Directions:__ The projects will be implemented using _Unity_ as well.
