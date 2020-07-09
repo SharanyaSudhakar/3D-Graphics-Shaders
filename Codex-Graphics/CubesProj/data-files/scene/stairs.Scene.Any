@@ -1,0 +1,36 @@
+
+/* -*- c++ -*- */
+{
+
+    entities = {
+       skybox = Skybox {
+            texture = "cubemap/whiteroom/whiteroom-*.png";
+       };
+
+       sun = Light {
+            attenuation = (0, 0, 1);
+            bulbPower = Power3(4e+006);
+            frame = CFrame::fromXYZYPRDegrees(-15, 207, -41, -164, -77, 77);
+            shadowMapSize = Vector2int16(2048, 2048);
+            spotHalfAngleDegrees = 5;
+            rectangular = true;
+            type = "SPOT";
+        };
+
+        camera = Camera {
+            frame = CFrame::fromXYZYPRDegrees(0, 1, 7);
+        };
+    };
+
+    models = {
+        stair = ArticulatedModel::Specification {
+            filename = "model/cube/cube.obj";
+        preprocess = {
+            setMaterial(all(), Color3(0, 0, 1));
+            transformGeometry(all(), Matrix4::scale(1.5, 0.075, 0.4)) };
+
+        };
+    };
+
+    name = "Spiral Staircase";
+};

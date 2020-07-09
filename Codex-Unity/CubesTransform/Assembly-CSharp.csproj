@@ -55,9 +55,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\Bench.cs" />
      <Compile Include="Assets\scripts\CornellCube.cs" />
+     <Compile Include="Assets\scripts\CreateCrane.cs" />
      <Compile Include="Assets\scripts\CreateCube.cs" />
      <Compile Include="Assets\scripts\CubeClass.cs" />
+     <Compile Include="Assets\scripts\Dog.cs" />
+     <Compile Include="Assets\scripts\Girl.cs" />
+     <Compile Include="Assets\scripts\Lego.cs" />
+     <Compile Include="Assets\scripts\RandomeCubes.cs" />
      <Compile Include="Assets\scripts\SpiralStairs.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Unity/CubesTransform/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

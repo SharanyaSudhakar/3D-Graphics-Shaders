@@ -1,13 +1,13 @@
 Application Log
-Start: Mon May 11 13:04:33 2020
+Start: Mon Jul  6 18:55:44 2020
 
 WARNING: AudioDevice is not enabled. Set G3DSpecification::audio = true before invoking initGLG3D() to enable audio.
-Initializing System::findDataFile took 0.004643s
+Initializing System::findDataFile took 0.003666s
 
 Entering GApp::GApp()
 cwd = D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\CubesProj\data-files
 System::setAppDataDir("D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\CubesProj\data-files")
-Initializing System::findDataFile took 0.003894s
+Initializing System::findDataFile took 0.002059s
 Setting video mode
 wglSwapIntervalEXT(0);
 Setting initial rendering state.
@@ -575,7 +575,7 @@ Network StartupSystem = {
         Adapter0 ={ 
             hostname = "DESKTOP-IH6KPIS;"
             name = ";"
-            ip = " 10.  0.  0. 12"; 
+            ip = " 10.  0.  0.170"; 
             subnet = "  0.  0.255.255"; 
             broadcast = "255.255.255.255"; 
             mac = "00:00:00:00:00:00"; 
@@ -591,6 +591,8 @@ Done GApp::loadFont(...)
 Done GApp::GApp()
 
 Found scenes:
+  "My Cornell Box" (./scene/myCornell.Scene.Any)
+  "Spiral Staircase" (./scene/stairs.Scene.Any)
   "White Cube" (./scene/whiteCube.Scene.Any)
   "Test Scene" (./test.Scene.Any)
   "G3D Debug Animation (Skeletal)" (c:\g3d\data10\common/scene/G3D_Debug_Animation_(Skeletal).Scene.Any)
@@ -665,30 +667,22 @@ Found scenes:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 Vertex info
 -----------
 1(39) : warning C7050: "tex0" might be used before being initialized
 1(39) : warning C7050: "tex1" might be used before being initialized
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 _____________________________________________________
@@ -708,7 +702,7 @@ avutil-55.dll
 swresample-2.dll
 swscale-4.dll
 fmod64.dll
-D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/CubesProj/data-files/./scene/whiteCube.Scene.Any
+D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/CubesProj/data-files/./scene/stairs.Scene.Any
 D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/CubesProj/data-files/icon.png
 D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/CubesProj/data-files/log.txt
 c:/g3d/G3D10/data-files/font/arial.fnt
@@ -734,7 +728,6 @@ c:/g3d/G3D10/data-files/shader/DefaultRenderer/DefaultRenderer_deferredShade.pix
 c:/g3d/G3D10/data-files/shader/Film/Film_FXAA_13_quality.pix
 c:/g3d/G3D10/data-files/shader/Film/Film_bloomExpose.pix
 c:/g3d/G3D10/data-files/shader/Film/Film_composite.pix
-c:/g3d/G3D10/data-files/shader/Film/Film_temporalAA.pix
 c:/g3d/G3D10/data-files/shader/Film/Film_toneMap.glsl
 c:/g3d/G3D10/data-files/shader/GBuffer/GBuffer.glsl
 c:/g3d/G3D10/data-files/shader/GFont/GFont_render.pix
@@ -769,23 +762,13 @@ c:/g3d/G3D10/data-files/shader/reconstructFromDepth.glsl
 c:/g3d/G3D10/data-files/shader/reverseReprojection.glsl
 c:/g3d/G3D10/data-files/shader/unlit.pix
 c:/g3d/G3D10/data-files/shader/unlit.vrt
-c:/g3d/data10/common/cubemap/cornellbox/empty-RG-NX.png
-c:/g3d/data10/common/cubemap/cornellbox/empty-RG-NY.png
-c:/g3d/data10/common/cubemap/cornellbox/empty-RG-NZ.png
-c:/g3d/data10/common/cubemap/cornellbox/empty-RG-PX.png
-c:/g3d/data10/common/cubemap/cornellbox/empty-RG-PY.png
-c:/g3d/data10/common/cubemap/cornellbox/empty-RG-PZ.png
 c:/g3d/data10/common/cubemap/whiteroom/whiteroom-NX.png
 c:/g3d/data10/common/cubemap/whiteroom/whiteroom-NY.png
 c:/g3d/data10/common/cubemap/whiteroom/whiteroom-NZ.png
 c:/g3d/data10/common/cubemap/whiteroom/whiteroom-PX.png
 c:/g3d/data10/common/cubemap/whiteroom/whiteroom-PY.png
 c:/g3d/data10/common/cubemap/whiteroom/whiteroom-PZ.png
-c:/g3d/data10/common/model/CornellBox/CornellBox.zip
-c:/g3d/data10/common/model/CornellBox/CornellBox.zip/CornellBox-Original.mtl
-c:/g3d/data10/common/model/CornellBox/CornellBox.zip/CornellBox-Original.obj
 c:/g3d/data10/common/model/cube/cube.obj
 c:/g3d/data10/common/model/cube/default.mtl
 c:/g3d/data10/common/model/cube/default.png
-c:/g3d/data10/common/scene/G3D_Simple_Cornell_Box_(Area_Light).Scene.Any
 

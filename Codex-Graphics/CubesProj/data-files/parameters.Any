@@ -1,0 +1,10 @@
+{ 
+    dimensions = Vector2(2, 3 ); 
+    name = "ss"; 
+    params = { 
+        h = 3; 
+        k = Matrix3(1, 0, 0, 0, 1, 0, 0, 0, 1 ); 
+    }; 
+    
+    showSamples = true; 
+} 

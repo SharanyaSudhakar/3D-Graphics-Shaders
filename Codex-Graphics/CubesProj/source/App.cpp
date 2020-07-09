@@ -1,9 +1,10 @@
 /** \file App.cpp */
 #include "App.h"
+#include "string"
 
 // Tells C++ to invoke command-line main() function even on OS X and Win32.
 G3D_START_AT_MAIN();
-
+/** Main function is here -SS*/
 int main(int argc, const char* argv[]) {
     initGLG3D(G3DSpecification());
 
@@ -57,7 +58,6 @@ int main(int argc, const char* argv[]) {
     settings.screenCapture.includeG3DRevision = false;
     settings.screenCapture.filenamePrefix = "_";
 
-
     return App(settings).run();
 }
 
@@ -65,7 +65,7 @@ int main(int argc, const char* argv[]) {
 App::App(const GApp::Settings& settings) : GApp(settings) {
 }
 
-
+/** This comment will appear in the document file.*/
 // Called before the application loop begins.  Load data here and
 // not in the constructor so that common exceptions will be
 // automatically caught.
@@ -84,7 +84,7 @@ void App::onInit() {
 #       ifndef G3D_DEBUG
             "G3D Sponza"
 #       else
-            "G3D Simple Cornell Box (Area Light)" // Load something simple
+            "Spiral Staircase" // Load something simple
 #       endif
 //        "G3D Debug Transparency"
         //developerWindow->sceneEditorWindow->selectedSceneName()  // Load the first scene encountered 
@@ -94,6 +94,7 @@ void App::onInit() {
     // some variables that advanced GUIs may wish to reference with pointers.
     makeGUI();
 
+    debugPrintf("Target frame rate = %f Hz\n", 1.0f / realTimeTargetDuration());
     // For higher-quality screenshots:
     // developerWindow->videoRecordDialog->setScreenShotFormat("PNG");
     // developerWindow->videoRecordDialog->setCaptureGui(false);
@@ -106,7 +107,7 @@ void App::onInit() {
 
     // Example of programmatically showing a texture browser for debugging
     // showInTextureBrowser("G3D::GBuffer/GLOSSY");
-
+    makeStairs();
 }
 
 
@@ -157,6 +158,31 @@ void App::makeGUI() {
 
     debugWindow->pack();
     debugWindow->setRect(Rect2D::xywh(0, 0, (float)window()->width(), debugWindow->rect().height()));
+}
+
+/** Make Stairs funciton will populate the stairs we need.*/
+void App::makeStairs()
+{
+
+    static const int NUM_STAIRS = 50;
+
+    for (int i = 0; i < NUM_STAIRS; ++i) {
+        const String& modelName = "stair";
+
+        const Point3 pos(0, 0, 0);
+
+        const shared_ptr<VisibleEntity>& v =
+            VisibleEntity::create
+            (format("stair%02d", i),
+                scene().get(),
+                //size.z / 2, size.y * i - size.y / 2, size.z / 2
+                scene()->modelTable()[modelName].resolve(), CFrame::fromXYZYPRDegrees(0.25, 0.075*i, 0.25, 20 * i, 0, 0));
+
+        // Don't serialize generated objects
+        v->setShouldBeSaved(false);
+
+        scene()->insert(v);
+    }
 }
 
 

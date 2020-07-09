@@ -14,6 +14,8 @@ protected:
     /** Called from onInit */
     void makeGUI();
 
+    void makeStairs();
+
 public:
     
     App(const GApp::Settings& settings = GApp::Settings());

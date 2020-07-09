@@ -1,0 +1,84 @@
+// -*- c++ -*-
+{
+name = "My Cornell Box";
+
+models = {
+   cubeModel = ArticulatedModel::Specification {
+        filename = "model/cube/cube.obj";
+        preprocess = {
+            setMaterial(all(), Color3(0, 0, 1));
+        };
+        scale = 0.5;
+   };
+
+    cubeDoubleModel = ArticulatedModel::Specification{
+        filename = "model/cube/cube.obj";
+        preprocess = {
+            setMaterial(all(), Color3(1, 0, 1));
+            transformGeometry(all(), Matrix4::scale(1.0, 2, 1.0));
+        };
+        scale = 0.5;
+    };
+
+    wallModel = ArticulatedModel::Specification{
+        filename = "model/cube/cube.obj";
+        preprocess = {
+            setMaterial(all(), Color3(0, 1, 1));
+            transformGeometry(all(), Matrix4::scale(1.0, 0.02, 1.0));
+        };
+        scale = 2;
+    };
+};
+
+entities = {
+   skybox = Skybox {
+        texture = "cubemap/whiteroom/whiteroom-*.png";
+   };
+
+   sun = Light {
+        attenuation = (0, 0, 1);
+        bulbPower = Power3(4e+006);
+        frame = CFrame::fromXYZYPRDegrees(-15, 207, -41, -164, -77, 77);
+        shadowMapSize = Vector2int16(2048, 2048);
+        spotHalfAngleDegrees = 5;
+        rectangular = true;
+        type = "SPOT";
+    };
+
+    cube0 = VisibleEntity {
+        model = "cubeModel";
+        frame = CFrame::fromXYZYPRDegrees(0.30, 0.25, 0.35, 45, 0, 0);
+    };
+
+    cube2 = VisibleEntity{
+        model = "cubeDoubleModel";
+        frame = CFrame::fromXYZYPRDegrees(-0.45, 0.5, -0.20, -45, 0, 0);
+    };
+
+    floor = VisibleEntity{
+        model = "wallModel";
+        frame = CFrame::fromXYZYPRDegrees(0, 0, 0, 0, 0, 0);
+    };
+    wallleft = VisibleEntity{
+        model = "wallModel";
+        frame = CFrame::fromXYZYPRDegrees(1, 1, 0, 0, 0, 90);
+    };
+    wallright = VisibleEntity{
+        model = "wallModel";
+        frame = CFrame::fromXYZYPRDegrees(-1, 1, 0, 0, 0, 90);
+    };
+    wallback = VisibleEntity{
+        model = "wallModel";
+        frame = CFrame::fromXYZYPRDegrees(0, 1, -1, 0, 90, 0);
+    };
+    ceiling = VisibleEntity{
+        model = "wallModel";
+        frame = CFrame::fromXYZYPRDegrees(0, 2, 0, 0, 0, 0);
+    };
+
+
+    camera = Camera {
+        frame = CFrame::fromXYZYPRDegrees(0, 1, 7);
+    };
+};
+};

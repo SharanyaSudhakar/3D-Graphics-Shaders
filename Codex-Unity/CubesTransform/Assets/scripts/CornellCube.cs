@@ -16,7 +16,7 @@ public class CornellCube : MonoBehaviour
         Vector3 sc = new Vector3(boxLength, boxWidth, boxLength);
         for (int i=0; i< box.Length; i++)
         {
-            //deafult floor 
+            //default floor 
             Vector3 loc = new Vector3(0, boxWidth/2, 0);
             Vector3 dir = Vector3.up;
             boxAngle = 0f;
@@ -28,7 +28,7 @@ public class CornellCube : MonoBehaviour
             }
 
             //left wall
-            if (i == 2)
+            else if (i == 2)
             {
                 loc = new Vector3(boxLength/2, boxLength/2, 0);
                 dir = Vector3.forward;
@@ -36,7 +36,7 @@ public class CornellCube : MonoBehaviour
             }
 
             //right wall
-            if (i == 3)
+            else if (i == 3)
             {
                 loc = new Vector3(-1*boxLength/2, boxLength/2, 0);
                 dir = Vector3.forward;
@@ -44,7 +44,7 @@ public class CornellCube : MonoBehaviour
             }
 
             //backwall
-            if (i == 4)
+            else if (i == 4)
             {
                 loc = new Vector3(0, boxLength/2, boxLength/2 - boxWidth / 2);
                 dir = Vector3.left;
