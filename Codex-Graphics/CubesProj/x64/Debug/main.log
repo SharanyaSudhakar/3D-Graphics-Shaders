@@ -1,4 +1,6 @@
 ﻿  App.cpp
-d:\working folder\3d-graphics-shaders\codex-graphics\cubesproj\source\app.cpp(179): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\working folder\3d-graphics-shaders\codex-graphics\cubesproj\source\app.cpp(179): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\CubesProj\source\App.cpp(177,111): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\CubesProj\source\App.cpp(177,98): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     Creating library x64\Debug\cubesd.lib and object x64\Debug\cubesd.exp
+waved.lib(wave.obj) : warning LNK4099: PDB 'wave.lib.pdb' was not found with 'waved.lib(wave.obj)' or at 'D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\CubesProj\x64\Debug\wave.lib.pdb'; linking object as if no debug info
   main.vcxproj -> D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\CubesProj\x64\Debug\cubesd.exe

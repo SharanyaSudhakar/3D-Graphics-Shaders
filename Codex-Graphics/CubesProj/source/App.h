@@ -13,7 +13,6 @@ protected:
 
     /** Called from onInit */
     void makeGUI();
-
     void makeStairs();
 
 public:

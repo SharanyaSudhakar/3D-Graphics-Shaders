@@ -1,34 +1,66 @@
-**Example**
-
-Welcome to Markdeep. It's the simple
-way to write plain text with _style_.
-
-*************************************
-*                _______            *
-* .-------.     /      /   .-----.  *
-* | Write +-+->/ Edit ++->| Share | *
-* '-------' ^ /______/ |   '-----'  *
-*           |          |            *
-*            '--------'             *
-*************************************
-
-1. Write a text document
-2. Add the Markdeep line at the end
-3. Save with file extension `.md.html`
-4. Double-click to view
-
-Learn more at
-https://casual-effects.com/markdeep
+                <meta charset="utf-8" emacsmode="-*- markdown -*-">
+                            **Cube Project Report**
 
 
-<!-- Markdeep: -->
-<style class="fallback">
-    body {
-        visibility: hidden;
-        white-space: pre;
-        font-family: monospace
-    }
-</style>
-<script src="markdeep.min.js"></script>
-<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script>
-<script>window.alreadyProcessedMarkdeep || (document.body.style.visibility = "visible")</script>
+System Overview
+===============================================================================
+
+The starter documentation for this program is App.cpp[..\build\doc\index.html]
+is the where th program runs from. All scene files have the extension __.Any__
+
+
+Order of projects start from:
+1. whiteCube.Scene.Any
+2. MyCornell.Scene.Any
+3. stairs.Scene.Any
+
+G3D VERSION
+==============================================================================
+I used G3D to create _whiteCube_ and _MyCornell_, both of which are pretty starightforward. For the stairs Scene on th
+otherhand, the starir are generated using a funtion in the main App.cpp file. This function is called makeStairs.
+It populates the stairs in a loop and automatically adds it to the scene.
+
+![Cube: Create a single cube](yellow.jpg width="500px")
+
+![Transformed Cube: Manually Edited Scene File: 1m^3 cube rotated 45 degrees at (0,0,5)](cubeRotation.jpg width="500px")
+
+![A set of generated stairs](stairs.jpg width="500px")
+
+![A model of the Cornell box](cornell.jpg width="500px")
+
+UNITY VERSION
+================================================================================
+I executed this project in unity as well and got pefecty good results in less time. Unity is my favored
+version of a good 3d game development and graphics software. 
+
+
+![Textured Cornell Box](cornellBox.jpg width="500px")
+
+![A set of generated spiral stairs](spiral.jpg width="500px")
+
+![Custom Scene inspired by legos.](complexTransform.jpg width="500px")
+
+The custom scene was not an easy task, I needed somehting complex enough to challenege me and
+also look visually appealing. The last was as important as the first. So I browsed through different ideas
+and reaing through the project specification helped a lot. in the introduction it talks about legos being scaled cube.
+So, my project clicked. i went through the lego basics page and found something I really liked that had a good visual.
+
+There were two piece os legos that have a slanted look to them. These were also created by using one cube scaled and rotated to
+sit at an angle to the first so as to make it look slanted.
+
+Reflection
+=================================================================================
+The primary learning in this project was transforming cubes. Albeit my periferal leraning
+centered around learning from my mistakes, getting blocked at code generation, not being able to learn
+or adapt to a strange environment with very little help. I put the assignment on pause for over 3 months.
+I successfully created the Cornell box, but the stairs stumped me. I could just as easily create them in unity, 
+even with spendid results, but the solution seemed far too impossible in G3D. 
+But coming back to the problem and staying on task until i finished it gave me a boost like no other. I finally accomplished all that I intended.
+
+Questions
+==================================================================================
+
+
+
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

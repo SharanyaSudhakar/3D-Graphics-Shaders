@@ -1,6 +1,5 @@
 /** \file App.cpp */
 #include "App.h"
-#include "string"
 
 // Tells C++ to invoke command-line main() function even on OS X and Win32.
 G3D_START_AT_MAIN();
@@ -107,7 +106,7 @@ void App::onInit() {
 
     // Example of programmatically showing a texture browser for debugging
     // showInTextureBrowser("G3D::GBuffer/GLOSSY");
-    makeStairs();
+    //makeStairs();
 }
 
 
@@ -119,7 +118,7 @@ void App::makeGUI() {
     
     // Example of how to add debugging controls
     infoPane->addLabel("You can add GUI controls");
-    infoPane->addLabel("in App::onInit().");
+    infoPane->addButton("MakeStairs", [this]() { makeStairs(); });
     infoPane->addButton("Exit", [this]() { m_endProgram = true; });
     infoPane->pack();
 
@@ -163,7 +162,6 @@ void App::makeGUI() {
 /** Make Stairs funciton will populate the stairs we need.*/
 void App::makeStairs()
 {
-
     static const int NUM_STAIRS = 50;
 
     for (int i = 0; i < NUM_STAIRS; ++i) {
