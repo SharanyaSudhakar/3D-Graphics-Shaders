@@ -1,37 +1,114 @@
-   <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/journal.css?">
-                 **Development Journal**
+   <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://use.typekit.net/yvg7yal.css"><link rel="stylesheet" href="journal.css?">
+                 **Journal - Mesh Project**
+                 
+This journal records the progress in reverse cronological order like a blog post.
+<br>
+
+
+Wineglass
+=============================================================
+![watertight mesh with a lip](2020-11-29__005_watertight_mesh_with_a_lip.jpg)
+
+the wineglass is a closed mesh that has a thickness
+
+
+![wineglass done](2020-11-29__004_wineglass_done.jpg)
+
+wineglass that reads input from a file for the radius.
+
+
+![reading radii](2020-11-29__003_reading_radii.jpg)
+
+The radius is never written if it is zero in the red line and for the greenline,
+the radius is written once and then never read further as once the inside wall
+of the glass is closed no more radius will be needed.
+Making this fix, reads
+better in the geometry.
+
+![wineglass from image](2020-11-29__002_wineglass_from_image.jpg)
+
+The image being read by the wine glass has a red line which is used to determine
+the outside edge of the glass, while the green line indicates the inside
+edge.
+To solve the wineglass problem, the image is read bottom to top and then
+from top to middle to get a sequence of radii that follow the shape of the
+wineglass.
+Additionally, the height of the glass as each radii is determined is
+also writen to file and read back in.
+
+
+Terrain Dimensions
+=============================================================
+![differeing dimensions and heightfield](2020-11-29__001_differeing_dimensions_and_heightfield.jpg)
+
+The differeing dimentions for the terrain has been fixed by reversing the inputs
+of the rows and colums when the color pixel is read. this was initially read a
+`(y,x)` instead of `(x,y)`.
+Also fixed the way height is read - white gives a
+flat plane, while black indicates full height.
 
 
 
 
-2020-09-20: New Section
+![height and width are different](2020-11-29__000_height_and_width_are_different.jpg)
+
+Fixing the terrrain image input to have different height and width fields. 
+The
+ball image in this terrain gets cut off at the right edge.
+
+
+Resolution added to the Terrain GUI
+=============================================================
+
+![Resolution Fixed](2020-09-26__000_Resolution_Fixed.jpg)
+
+There are two new settings for Terrain generation.
+<br>
+1. The scale on the xz axis.<br>
+2. The resoltuion of the mesh (row and col count)
+
+
+HeightField
+=============================================================
+
+![heightfield](2020-09-25__000_heightfield.jpg)
+
+Triagles are now rightside up.
+Height field works but the scale of the mesh needs to be fixed - to increase
+the number of squares in the same width/height ratio.
+
+
+Terrain hardcoded
 =============================================================
 ![fixed angle of terrain](2020-09-20__003_fixed_angle_of_terrain.jpg)
 
-the y direction is always zero.now new issue,triangles are in the wrong side
+By setting y to be 0 always, the previous issue was fixed. Now new issue,triangles are in the wrong side.
 
 
 ![terrain flat its the wrong angle](2020-09-20__002_terrain_flat_its_the_wrong_angle.jpg)
 
+The terrain `.off` file is card coded and generated.
+The `y`-direction is always zero. this can be seen by the diagonal mesh being created.
+
+Cylinder Precision
+==============================================================
 
 ![fixed precision](2020-09-20__001_fixed_precision.jpg)
 
-i fixed the mismatched triangle sizes by getting rid of the two point precision
-and changing the angle to be divided by number of cols to 2Pi instead of 360.
-Keeping the value in radians helps. 
+I fixed the mismatched triangle sizes by getting rid of the two point precision
+and changing the angle to be divided by number of cols to $2\Pi$ instead of $360\degrees$.
+Keeping the value in `radians` helps.
 
-
-
-![precision](2020-09-20__000_precision.jpg)
+![precision error](2020-09-20__000_precision.jpg)
 
 The precision of the vertex position is set to two and this is causeing
-mismatches in the triangle size. 
+mismatches in the triangle size.
 
 
-2020-09-19: New Section
-=============================================================
 ![Cylinder and Cube Done!!](2020-09-19__003_Cylinder_and_Cube_Done_.jpg)
 
+Cubes and Cylinder hardcoded
+=============================================================
 
 ![Cube finished](2020-09-19__002_Cube_finished.jpg)
 
@@ -42,28 +119,9 @@ hard coded file needed a face change.
 
 Looks like the cube is missing the top surface
 
-
-
 ![cylinder done](2020-09-19__000_cylinder_done.jpg)
 
-These cylinders have caps on them !!!!
-
-
-2019-03-01: Formatting Notes
-=====================================================
-
-This development journal is for you to maintain a log of your project.
-It is in [Markdeep](https://casual-effects.com/markdeep/) format. It is
-readable as plain text but will have additional nice formatting when loaded
-in a web browser.
-
-Put the newest entry at the top of this file, like a blog. Begin the title of
-each section with a date in ISO format (YYYY-MM-DD).
-
-Press *F4* or *F6* in your G3D program to automatically add screenshots and video to 
-this development journal.
-
-
+These cylinders have caps on them. Originally they where created without the caps.
 
 <style>em.asterisk { font-style: normal; font-weight: bold; }</style><style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>

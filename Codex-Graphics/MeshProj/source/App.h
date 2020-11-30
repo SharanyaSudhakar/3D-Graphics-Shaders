@@ -13,14 +13,16 @@ protected:
 
     /** Called from onInit */
     void makeGUI();
-    void writeFile(const char* name, float& c, float& r, bool isCylinder, const char* yName);
     void makeCylinder();
     void makeTerrain(G3D::String);
-    float m_col;
-    float m_row;
-    float m_ratio;
-    float m_y;
-    G3D::String m_image, m_file;
+    void makeWineGlass(G3D::String);
+    float cylinder_col;//# of columns in cyl 
+    float cylinder_row;//# of rows in cyl 
+    float terrain_px_per_m;//pixels / meter for terrain
+    float terrain_row_col;//#rows and columns in terrain
+    float terrain_max_height;
+    float wineglass_row, wineglass_col;
+    G3D::String terrain_image_path, wineglassImagePath;
 
 
 public:

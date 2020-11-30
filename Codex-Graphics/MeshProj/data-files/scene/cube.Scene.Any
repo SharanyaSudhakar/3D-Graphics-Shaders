@@ -16,17 +16,16 @@
             texture = "cubemap/noonclouds/noonclouds_*.png"; 
         };
         
-        sun = Light { 
-            attenuation = (0, 0, 1); 
-            bulbPower = Power3(1e+6); 
-            shadowsEnabled = true; 
-			shadowMapBias = 0.01;
-            track = lookAt(Point3(-15, 200, 40), Point3(0, 0, 0));
-            shadowMapSize = Vector2int16(2048, 2048); 
-            spotHalfAngleDegrees = 4; 
-            rectangular = true; 
-            type = "SPOT"; 
-        }; 
+        sun = Light{
+        bulbPower = Power3(2e6,1.7e6,1.4e6);
+        shadowMapBias = 0.01;
+        track = lookAt(Point3(-90, 200, 40), Point3(0, 0, 0));
+        shadowMapSize = Vector2int16(4096, 4096);
+        shadowMapBias = 0.02;
+        spotHalfAngleDegrees = 7;
+        rectangular = true;
+        type = "SPOT";
+        };
         
     }; 
         

@@ -5,46 +5,41 @@
 Algorithm Specification
 ===============================================================================
 
-To create the meshes i used hard coding techiniques for creating the tetrahedran,
-cube and a 3-face cylinder.
+Description
+---------------------------------------------------------------------------
+Create Meshes algorithm is a set of algorithms that create a cube, cylinder, wineglass and terrain meshes.
 
-The tetrahedran wwas a fairly straightforward code. The .off file type
-takes in 3 numbers at the top
+The Strategy pattern was used to setup the solution. This pattern allowed the flexibility of creating any mesh I needed at runtime.
+They also share some core functions that can be overlapped or reused, like setting up the vertices and triangles of the mesh.
+The task of this algorithm is to setup the vertex positons and the triangle connections which are saved out in .off files, which the G3D engine inturn reads to produce the mesh. For this task the main abstract class `Mesh` is setup with the necessary overlapping properties, some virtual and pure virtual functions. ALthough the implementation of these functions is fundamentally different for the `Terrain` and `Cylinder`, they both are similar in the steps and the general layout of the `.off` file. For this reason, it made better sense to use the Strategy pattern to define the overlaps in a parent interface/class and subsequestly only write the necessary functions the differ.
 
-~~~~~~~~~~~~~~~~~~~~~C
-//vertexcount trianglecount edgecount
-8 16 32
+PSEUDOCODE
+---------------------------------------------------------------------------
+`Mesh` *abstract class*<br>
+The class sets the common variables and the overridden methods needed by the other implementing concrete classes.
+By setting up the mesh class it makes it easier to call extend the class as needed for other mesh object implementations
+and also provides the oppurtunity to call them interchangeably at runtime.
 
-~~~~~~~~~~~~~~~~~~~~~
-The edgecount although is not as mandatory as the other two. these numbers describe the number of vertex 
-inputs and the number of triangle inputs your file is goinf to have.
+`writeDimensions()`
+	this function calculates the triangle and vertex counts of the mesh
+`writeVertices()`
+	this function auto generates the vertex locations based on the row and column count
+`writeTriangles()`
+	this function auto generates the three vertices that make each triangle of the mesh.
 
-For the cube I had 8 vertices and 12 triangles - 2 triangle per side.
-The order of the vertices determines the position associated with it, using which we mark off three vertex numbers to
-form one triangle.
+The bulk of the **Cylinder** and **Terrain** class has the implementation of the overriden methods.
+The **Terrain** class also implements the `calculateHeight()` function. This funciton reads the incoming image file and saves out
+the greyscale values as height fields of the corresponding pixel. This informaiton in read in at the time the vertices are
+saved out to file and used. Similar to this function, the **WineGlass** class also has a `calculateRadius()` function
+that has a similar purpose but writes out the radius and height informtion.
 
-Forexample: 
-~~~~~~~~~~~~~~~~~~~~~~~~C
-1 0 0
-0 0 0
-0 0 1
-3 0 1 2
-~~~~~~~~~~~~~~~~~~~~~~~~
+TIME ANALYSIS
+----------------------------------------------------------------------------
+The is a $\O(n)$ time algorithm as for every mesh the function is run only once.
+Within each algorithm the reading and writting time of the height field depends on the
+resolution of the `xz`-axis and the number of rows and colums. This makes the terrain
+$\O(n^2)$
 
-The first three lines are the coordinates of the points 0 1 and 2 respectively. the last line
-indicates three vertices form a face and we list the vertex position in order.
-Always makesure the order of the vertices you are drawing follow one direction clockwise or counter clockwise.
-This is essentialy to make sure the triangles get drawn. 
-0 1 2 and 2 1 0 will work but 2 0 1 wont.
-
-__TODO:__
-
-Once I had worked out the cube, I had did the cylinder and then wrote the code to create files with .off
-extensions. The next step is to make this code automate the creation of a wine glass and also add the _gui_ 
-necessary to make the changes live in the development environment.
-
-Once i have solved this, i will move on to the hightfield problem, thich is inhenrently new to me. 
-And lastly I will solve the water tight / closede mesh.
 
 IMAGES
 ==================================================
@@ -55,19 +50,21 @@ Task Breakdown
 
 Task        | Description                                       | Planned time (h)  | Actual time (h)
 ------------|---------------------------------------------------|:-----------------:|---------------:
-report      |formatted md doc with placeholder txt              |0.50|0.40
+report      |formatted md doc with placeholder txt              |0.50|1.20
 cylinder    |draft cylinder with 3 faces hard coded             |0.30 |0.20
  - mvp	    |generate loop to create all vertices and faces     |1 |1.5
  - polished |polished cylinder with top and bottom caps         |1|	1.20
  - gui      |gui for the cylinder				|1 |   1
-wineglass   | simple                                            |0.45|
- - detailed | different versions at least 2                     |1|
- - gui      | gui can make different sizes                      |0.30|
- - closed   | closed mesh with thickness for the glass          |1.5|
-hightfield  | research                                          |0.45|
- - implement|                                                   |2|0.45
-misc.       |textures and lighting                              |1|
+wineglass   | simple                                            |0.45|0.30
+ - gui      | gui can make different sizes                      |0.30|0.10
+ - closed   | closed mesh with thickness for the glass          |1.5|0.30
+hightfield  | research                                          |0.45|0.30
+ - implement|                                                   |2|2.30
+misc.       |textures and lighting                              |1|1.5
 
+Journal
+=================================================
+The project progress was recorded and can be seen [**here**]("../journal/journal.md.html")
 
 
 

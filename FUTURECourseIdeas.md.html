@@ -34,26 +34,240 @@ Computer Graphics Books
 
 Sample Schedule
 =======================================================================================
-Jul 18, 2020: Codex Mesh
- - Readings
- - C++ I/O
+Sep 10, 2020: ~~Welcome~~
+ - Read:
+   + "Preface" in GC
+   + "C++" in GC
+   + The Developer Tools
+ - chapter in the G3D documentation
+   + "Configure the Editor" section of Recommended Toolset
+   + Skim the G3D Build System Instructions, which describe how I configured your USB disk
+ - Class policies (this syllabus!)
+ - 3D coordinates
+ - Euler angles
+ - Hadamard vector operations
+ - Working with specifications
+ - Modeling 3D Graphics
+ - Watch “Burning Safari” (France 2006, 2 minutes, English) by Aupetit, Maleo, Predal, La Taille, Trebutien, and Irzenski at Goeblins L'Ecole de L'Image
 
-Jul 21, 2020: Homework 1
- - edx
+Sep 10, 2020: ~~Cubes~~
+ - Read the [Cubes project](http://graphicscodex.com/projects/cubes/) document before class
+ - Complete the project before the following Monday night, at 11pm
+ - Subversion
+ - Visual Studio
+ - G3D Starter project
+ - Basic C++
+ - Writing to files
+ - Scene file format
+ - Markdeep and Doxygen
+ - Writing a report
  
- _Plan for weekend overtime if I miss this milestone_
- 
-Jul 23, 2020: Finish Mesh
- **Upload to Portfolio**. 
-
-Jul 25, 2020: Geometryeometry Design
+Sep 15, 2020: ~~Modeling with Triangles~~
  - Reading
+   + This syllabus
+   + "Introduction" in *GC*
+   + "Version Control Basics" in *GC*
+   + "Surface Geometry" in *GC*
+   + Ch. 14, “Standard Approximations and Representations” in *P&P*
+ - Indexed triangle meshes
 
-Jul 27, 2020: Edx Homework 2
- - Finish Videos 
- - Start Homework Prep
- 
-Aug 28, 2020: No work Yet
+Sep 17, 2020: Transformations
+ - Reading
+   + Ch. 14.1-14.3 on number representations in *P&P*
+   + "Floating Point Formats" in *GC*
+   + Ch. 10, “Transformations in Two Dimensions” in *P&P*
+   + Ch. 11.1-11.2, “Transformations in Three Dimensions” in *P&P*
+ - Linear algebra primer
+ - Translation
+ - Scale
+ - Rotation
+ - Composition
+ - Dot product
+ - Homogeneous coordinates
+ - Object, World, and Camera space
+ - Inversion (general + special cases)
+ - Raymond (France 2006, 5 min, French) by bif, produced by The Mill
+
+Sep 17, 2020: Lab 1: ~~Meshes~~
+ - Read and begin the [Meshes project](http://graphicscodex.com/projects/meshes/) document before class
+
+Sep 22, 2020: Ray Tracing
+ - Reading
+   + "A Model of Light" in *GC*
+   + "The Rendering Equation" in *GC*
+   + Ch. 7.6 on coordinates in *P&P*
+ - Transmission
+ - Rudimentary scattering functions
+ - Geometric intersection
+ - Shadowing
+
+Sep 24, 2020: Ray Intersection
+ - Reading
+   + "A Camera Model" in *GC*
+   + "Ray Casting" in *GC*
+   + "Direct Illumination" in *GC*
+ - Ray generation
+ - Ray-sphere intersection
+ - Ray-plane intersection
+ - Ray-triangle intersection
+ - “Minamitama District”, (Japan, 2008, English, 2 min)
+ - “Exodus”, (Sweden, 2013, English, 3 min)
+
+Sep 24, 2020: Lab 2: Rays
+ - Read and begin the [Rays project](http://graphicscodex.com/projects/rays/) document before class
+
+Sep 29, 2020: Microfacet Models
+ - Reading
+   + "Materials" in *GC*
+   + Ch. 27, “Materials and Scattering” in *P&P*
+   + Ch. 37, “Spatial Data Structures” in *P&P*
+
+Oct 01, 2020: Monte Carlo Methods
+ - Reading
+   + "Rendering Algorithms" in GC
+   + Ch. 30, “Probability and Monte Carlo Integration” in P&P
+   + Ch. 31.16-31.18.3, of “Computing Solutions to the Rendering Equation: Theoretical Approaches.” in P&P
+   + Ch. 32.1-32.5 of “Rendering in Practice” in P&P
+   + Optional: [Lecture notes](https://www.cs.williams.edu/~morgan/cs371-f16/path-tracing-lecture-notes.pdf)
+ - Monte Carlo integration
+ - The path tracing algorithm
+ - Importance sampling
+ - Pixel integration
+ - Direct light integration
+ - Indirect light integration
+ - Parallel SIMD batch processing
+
+Oct 01, 2020: Lab 3: Path Tracing
+ - Read and begin the [Paths project](http://graphicscodex.com/projects/paths/) before class
+ - Work in lab from 1:30pm-4:00pm
+
+Oct 08, 2020: Project Launch
+ - [5 faces](https://www.youtube.com/watch?v=i8hSZGTXTx8) demoscene production (2013, 5min)
+ - “Home Sweet Home” Supinfocom Arles (France, 2013, 9:55)
+ - Brief noise overview
+ - Start Design Project #1
+   + [Geometry](http://graphicscodex.com/projects/geo-design/index.html) or [Renderer](http://graphicscodex.com/projects/render-design/index.html)
+   + Note intermediate deadline on October 13, 9:55am
+
+ - Schedule:
+  + Visualize final presentation images
+  + Race to code completion by Tuesday (plan to implement and reject many prototype designs)
+  + Evolve specification as code and design solidify
+  + Write MVP report
+  + Polish for eight days
+
+Oct 08, 2020 : Design Project #1
+ - [Loom](https://vimeo.com/24069938) Filmakademie BW (Germany, 2010, 5:20)
+
+Oct 15, 2020: Design Project #1
+ - [“Turtles All The Way Down”](https://www.youtube.com/watch?v=z48t2R2hEJM) Subdream (Germany, 2013, 4:55)
+ - [“Rupture”](https://www.youtube.com/watch?v=sWYU5Xvphwg) ASD (Greece, 2009, 6:42)
+ - Morning session meets in Jesup 203
+ - Specification due
+ - MVP report due
+ - MVP code due
+
+Oct 15, 2020 : Design Project #1
+
+Oct 20, 2020: Design Project #1
+
+Oct 22, 2020: Design Project #1 Presentations
+
+Oct 27, 2020: GPU
+ - Read "Ray Marching" in GC
+ - Parallel Architectures
+  + CPU SIMD
+  + GPU programming model
+ - Driver + OpenGL as OS
+  + Rasterizer
+  + GLSL
+ - Invoking a full-screen shader
+  + G3D::Args
+  + LAUNCH_SHADER
+  + Camera and textures
+  + F5 to reload shaders
+ - Camera:
+  + Generating eye rays yourself
+ - Materials:
+  + A simple Blinn-Phong BSDF
+ - Lights:
+  + Implementing biradiance yourself
+  + Environment lighting
+ - [GPU Architechture Lecture Notes](https://www.cs.williams.edu/~morgan/cs371-f16/gpu-architecture-notes.pdf)
+
+Oct 29, 2020: Sphere Tracing
+ - Read
+  + “Making maps with noise functions” by Amit Patel
+  + “Menger Fractal” by Inigo Quilez
+  + “SDF Modeling” video by Inigo Quilez
+ - Signed distance functions
+ - Ray marching
+ - Sphere tracing
+ - Procedural texture
+ - Read [GPU](http://graphicscodex.com/projects/gpu/)
+ - GLSL
+ - CSG
+ - Procedural Textures
+
+Nov 05, 2020: Lab 5 GPU
+ - Complete the GPU project begun independently last week
+ - Lab 6: Isosurfaces
+
+Nov 10,2020: Marching Cubes
+
+Nov 12, 2020: Parametric Curves
+ - Reading
+  + Ch. 22, “Splines and Subdivision Curves” in P&P
+  + Ch. 23, “Splines and Subdivision Surfaces” in P&P
+ - “The Race”, Autour de Minuit, 15 min, France 2015
+ - Polylines
+ - Splines
+ - Spline patches
+ - Subdivision surfaces
+
+Nov 12, 2020: Final Project
+ - [Notes](https://www.cs.williams.edu/~morgan/cs371-f16/final-project-notes.pdf)
+ - Recommended project topics:
+  + dragon's hoard: pile up random coins, gems, goblets, swords, helmets, etc.
+  + surface-level alien planet view generator, ala No Man's Sky, Fermi Paradox, and Musgrave via implicit surfaces and noise functions
+  + grow ivy on architectural surfaces
+  + modeling tool ⇒ implicit surface GLSL code or CPU + marching cubes or point clouds, ala Dreams PS4
+  + procedural city, castle, space ships, foliage, forests, buildings, mazes, terrain, etc.
+  + procedural texture generation
+  + mesh melder: marching cubes ⇒ polygons + texture
+  + data-driven GPU CSG renderer
+  + real-time GPU ocean, clouds, fire, etc.
+ - Due at 2pm: McGuire approval of placeholder report “quality” images
+  + Show at least ten images, potentially from different projects
+  + Photoshop mockups and 3rd party images strongly encouraged
+  + I'll greenlight the subset that are compelling and possible
+
+Nov 17, 2020: Final project
+ - Due
+
+Nov 19, 2020: CGI Art History
+ - Pixar art history lecture
+
+Nov 19, 2020: Large Models
+ - MVP Code Due
+
+Nov 24, 2020: CGI Art History II
+ - Pixar art history
+
+Dec 1, 2020: Final Project
+
+Dec 3, 2020: Rasterization
+ - MVP
+ - Readings
+  + MVP Report Due in SVN
+  + Read Ch. 15, “Ray Casting and Rasterization” in P&P
+  + Rasterization algorithm
+  + Projection matrices
+  + Shadow maps
+
+Dec 08, 2020: Final Project
+
+Dec 10, 2020: Final Presentation
 
 Advanced Graphics 
 =======================================================================================
@@ -61,5 +275,7 @@ Advanced Graphics
 
 Morgan Mcguire advanced cource work in [Ray Tracing](https://morgan3d.github.io/advanced-ray-tracing-course/)
 
+Graphics Advice from Eric Arneback [link](https://erkaman.github.io/posts/beginner_computer_graphics.html)
 
+[Scratch Pixel](https://www.scratchapixel.com/index.php?redirect) - has Raytracing and other topics
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

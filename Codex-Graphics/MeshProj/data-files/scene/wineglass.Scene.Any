@@ -1,10 +1,10 @@
 /* -*- c++ -*- */
 {
-name = "Terrain";
+name = "WineGlass";
 
 entities = {
-    cube = VisibleEntity {
-        model = "terrainModel";
+    cylinder = VisibleEntity {
+        model = "WineGlassModel";
         frame = CFrame::fromXYZYPRDegrees(0,0,0,0,0,0);
     };
 
@@ -16,13 +16,14 @@ entities = {
         texture = "cubemap/noonclouds/noonclouds_*.png";
     };
 
-    sun = Light{
-        bulbPower = Power3(2e6,1.7e6,1.4e6);
+    sun = Light {
+        attenuation = (0, 0, 1);
+        bulbPower = Power3(1e+6);
+        shadowsEnabled = true;
         shadowMapBias = 0.01;
-        track = lookAt(Point3(-90, 200, 40), Point3(0, 0, 0));
-        shadowMapSize = Vector2int16(4096, 4096);
-        shadowMapBias = 0.02;
-        spotHalfAngleDegrees = 7;
+        track = lookAt(Point3(-15, 200, 40), Point3(0, 0, 0));
+        shadowMapSize = Vector2int16(2048, 2048);
+        spotHalfAngleDegrees = 4;
         rectangular = true;
         type = "SPOT";
     };
@@ -30,9 +31,9 @@ entities = {
 };
 
 models = {
-    terrainModel = ArticulatedModel::Specification {
-        filename = "../model/terrain.off";
-        scale = 20;
+    WineGlassModel = ArticulatedModel::Specification {
+        filename = "../model/wineglass.off";
+        scale = 10;
     };
 };
 

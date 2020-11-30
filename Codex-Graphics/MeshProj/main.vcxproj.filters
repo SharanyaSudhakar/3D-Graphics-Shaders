@@ -7,9 +7,18 @@
     <ClCompile Include="source\make_off.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\CreateCylinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CreateTerrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\create_mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -30,6 +39,9 @@
       <Filter>Scene Files</Filter>
     </None>
     <None Include="data-files\scene\terrain.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\scene\wineglass.Scene.Any">
       <Filter>Scene Files</Filter>
     </None>
   </ItemGroup>

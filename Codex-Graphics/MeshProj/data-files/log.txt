@@ -1,13 +1,13 @@
 Application Log
-Start: Fri Sep 25 00:57:28 2020
+Start: Sun Nov 29 16:56:53 2020
 
 WARNING: AudioDevice is not enabled. Set G3DSpecification::audio = true before invoking initGLG3D() to enable audio.
-Initializing System::findDataFile took 0.003211s
+Initializing System::findDataFile took 0.004430s
 
 Entering GApp::GApp()
 cwd = D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\MeshProj\data-files
 System::setAppDataDir("D:\WORKING FOLDER\3D-Graphics-Shaders\Codex-Graphics\MeshProj\data-files")
-Initializing System::findDataFile took 0.001998s
+Initializing System::findDataFile took 0.002279s
 Setting video mode
 wglSwapIntervalEXT(0);
 Setting initial rendering state.
@@ -155,7 +155,7 @@ Network StartupSystem = {
         Chipset = "GeForce GTX 1070/PCIe/SSE2;"
         Vendor = "NVIDIA Corporation;"
         Driver = "Unknown (Can't find driver);"
-        OpenGL version = "4.6.0 NVIDIA 442.23;"
+        OpenGL version = "4.6.0 NVIDIA 456.71;"
         Textures = 32 ;
         Texture coordinates = 8 ;
         Texture units = 4 ;
@@ -604,6 +604,7 @@ Found scenes:
   "Cylinder" (./scene/cylinder.Scene.Any)
   "Final" (./scene/final.Scene.Any)
   "Terrain" (./scene/terrain.Scene.Any)
+  "WineGlass" (./scene/wineglass.Scene.Any)
   "G3D Debug Animation (Skeletal)" (c:\g3d\data10\common/scene/G3D_Debug_Animation_(Skeletal).Scene.Any)
   "G3D Debug Area Light (Glossy)" (c:\g3d\data10\common/scene/G3D_Debug_Area_Light_(Glossy).Scene.Any)
   "G3D Debug Area Light (Matte)" (c:\g3d\data10\common/scene/G3D_Debug_Area_Light_(Matte).Scene.Any)
@@ -698,6 +699,8 @@ Vertex info
 
 
 
+
+
 _____________________________________________________
 
     ###    Files Used    ###
@@ -719,9 +722,10 @@ D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/MeshProj/data-files/./scene
 D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/MeshProj/data-files/./scene/../model/terrain.off
 D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/MeshProj/data-files/./scene/cube.Scene.Any
 D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/MeshProj/data-files/./scene/terrain.Scene.Any
-D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/MeshProj/data-files/firstGrey.png
+D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/MeshProj/data-files/greys.png
 D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/MeshProj/data-files/icon.png
 D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/MeshProj/data-files/log.txt
+D:/WORKING FOLDER/3D-Graphics-Shaders/Codex-Graphics/MeshProj/data-files/terrain.png
 c:/g3d/G3D10/data-files/font/arial.fnt
 c:/g3d/G3D10/data-files/font/console-small.fnt
 c:/g3d/G3D10/data-files/font/greek.fnt

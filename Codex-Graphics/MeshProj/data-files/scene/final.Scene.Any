@@ -78,28 +78,29 @@
             mass = 1; 
             model = "cylinderModel"; 
         }; 
+
+        wineglass = VisibleEntity {
+            canCauseCollisions = true;
+            frame = CFrame::fromXYZYPRDegrees(-0.642731, 3.2637, 2.63032, -137.34, -40.6339, -9.8112);
+            mass = 1;
+            model = "WineGlassModel"
+        };
         
         skybox = Skybox { 
             mass = 1; 
             texture = "cubemap/noonclouds/noonclouds_*.png"; 
         }; 
         
-        sun = Light { 
-            attenuation = ( 0, 0, 1 ); 
-            bulbPower = Power3(1e+06 ); 
-            canCauseCollisions = true; 
-            mass = 1; 
-            rectangular = true; 
-            shadowMapBias = 0.01; 
-            shadowMapSize = Vector2int16(2048, 2048 ); 
-            shadowsEnabled = true; 
-            spotHalfAngleDegrees = 4; 
-            track = lookAt(
-                Point3(-15, 200, 40 ), 
-                Point3(0, 0, 0 ) ); 
-            
-            type = "SPOT"; 
-        }; 
+        sun = Light{
+        bulbPower = Power3(2e6,1.7e6,1.4e6);
+        shadowMapBias = 0.01;
+        track = lookAt(Point3(-90, 200, 40), Point3(0, 0, 0));
+        shadowMapSize = Vector2int16(4096, 4096);
+        shadowMapBias = 0.02;
+        spotHalfAngleDegrees = 7;
+        rectangular = true;
+        type = "SPOT";
+        };
         
     }; 
     
@@ -150,6 +151,11 @@
             filename = "../model/cylinder.off"; 
             scale = 20; 
         }; 
+
+        WineGlassModel = ArticulatedModel::Specification{
+        filename = "../model/wineglass.off";
+        scale = 10;
+        };
         
     }; 
     

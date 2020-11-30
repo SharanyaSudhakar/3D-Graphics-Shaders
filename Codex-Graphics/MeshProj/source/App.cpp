@@ -62,7 +62,7 @@ int main(int argc, const char* argv[]) {
 }
 
 
-App::App(const GApp::Settings& settings) : GApp(settings), m_col(3.0f), m_row(3.0f){}
+App::App(const GApp::Settings& settings) : GApp(settings), cylinder_col(3.0f), cylinder_row(3.0f){}
 
 
 // Called before the application loop begins.  Load data here and
@@ -115,29 +115,45 @@ void App::makeGUI() {
 
     // Example of how to add debugging controls
     infoPane2->addLabel("Cylinder Dimentions GUI");
-    infoPane2->addNumberBox("Width:", &m_col, "", GuiTheme::LOG_SLIDER, 3.0f, 25.0f, 1.0f);
-    infoPane2->addNumberBox("Height:", &m_row, "", GuiTheme::LOG_SLIDER, 3.0f, 25.0f, 1.0f);
+    infoPane2->addNumberBox("Width:", &cylinder_col, "", GuiTheme::LOG_SLIDER, 3.0f, 25.0f, 1.0f);
+    infoPane2->addNumberBox("Height:", &cylinder_row, "", GuiTheme::LOG_SLIDER, 3.0f, 25.0f, 1.0f);
     infoPane2->addButton("Make Cylinder", [this]() { makeCylinder();});
     infoPane2->addButton("Exit", [this]() { m_endProgram = true; });
     infoPane2->pack();
 
     GuiPane* infoPane3 = debugPane->addPane("User Input Pane", GuiTheme::ORNATE_PANE_STYLE);
 
-    // Example of how to add debugging controls
     infoPane3->addLabel("Terrain Dimentions GUI");
-    infoPane3->addNumberBox("xz Scale:", &m_ratio, "px/m", GuiTheme::LOG_SLIDER, 10.0f, 500.0f, 10.0f);
-    infoPane3->addNumberBox("Max Y", &m_y, "m", GuiTheme::LOG_SLIDER, 0.0f, 10.0f);
+    infoPane3->addNumberBox("xz Scale:", &terrain_px_per_m, "px/m", GuiTheme::LOG_SLIDER, 100.0f, 500.0f, 10.0f);
+    infoPane3->addNumberBox("Resolution:", &terrain_row_col, "px/m", GuiTheme::LOG_SLIDER, 10.0f, 500.0f, 10.0f);
+    infoPane3->addNumberBox("Max Y", &terrain_max_height, "m", GuiTheme::LOG_SLIDER, 0.0f, 0.5f, 0.02f);
     infoPane3->beginRow();
     {
-        infoPane3->addTextBox("Input Image", &m_image)->setWidth(210);
+        infoPane3->addTextBox("Input Image", &terrain_image_path)->setWidth(210);
         infoPane3->addButton("...", [this]() {
-            FileDialog::getFilename(m_image, "png", false);
+            FileDialog::getFilename(terrain_image_path, "png", false);
 
         })->setWidth(30);
     }
     infoPane3->endRow();
-    infoPane3->addButton("Make Terrain", [this]() { makeTerrain(m_image); });
+    infoPane3->addButton("Make Terrain", [this]() { makeTerrain(terrain_image_path); });
     infoPane3->pack();
+
+    GuiPane* infoPane4 = debugPane->addPane("WineGlass Input Pane", GuiTheme::ORNATE_PANE_STYLE);
+
+    infoPane4->addLabel("Wine Glass Input");
+    infoPane4->addNumberBox("detail:", &wineglass_row, "rows", GuiTheme::LOG_SLIDER, 10.0f, 50.0f, 1.0f);
+    infoPane4->addNumberBox("revolutions:", &wineglass_col, "cols", GuiTheme::LOG_SLIDER, 10.0f, 50.0f, 1.0f);
+    infoPane4->beginRow();
+    {
+        infoPane4->addTextBox("Input Image", &wineglassImagePath)->setWidth(210);
+        infoPane4->addButton("...", [this]() {
+            FileDialog::getFilename(wineglassImagePath, "png", false);
+        })->setWidth(30);
+    }
+    infoPane4->endRow();
+    infoPane4->addButton("Make WineGlass", [this]() {makeWineGlass(wineglassImagePath); });
+    infoPane4->pack();
 
     GuiPane* rendererPane = debugPane->addPane("DefaultRenderer", GuiTheme::ORNATE_PANE_STYLE);
 
@@ -163,16 +179,8 @@ void App::makeGUI() {
             }));
     rendererPane->moveRightOf(infoPane3);
     infoPane3->moveRightOf(infoPane2);
+    infoPane4->moveRightOf(infoPane3);
     rendererPane->moveBy(10, 0);
-
-    // More examples of debugging GUI controls:
-    // debugPane->addCheckBox("Use explicit checking", &explicitCheck);
-    // debugPane->addTextBox("Name", &myName);
-    // debugPane->addNumberBox("height", &height, "m", GuiTheme::LINEAR_SLIDER, 1.0f, 2.5f);
-    // button = debugPane->addButton("Run Simulator");
-    // debugPane->addButton("Generate Heightfield", [this](){ generateHeightfield(); });
-    // debugPane->addButton("Generate Heightfield", [this](){ makeHeightfield(imageName, scale, "model/heightfield.off"); });
-
     debugWindow->pack();
     debugWindow->setRect(Rect2D::xywh(0, 0, (float)window()->width(), debugWindow->rect().height()));
 }

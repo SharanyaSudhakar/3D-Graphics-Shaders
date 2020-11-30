@@ -91,9 +91,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="source\App.h" />
+    <ClInclude Include="source\create_mesh.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\App.cpp" />
+    <ClCompile Include="source\CreateCylinder.cpp" />
+    <ClCompile Include="source\CreateTerrain.cpp" />
     <ClCompile Include="source\make_off.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +107,7 @@
     <None Include="data-files\scene\cylinder.Scene.Any" />
     <None Include="data-files\scene\final.Scene.Any" />
     <None Include="data-files\scene\terrain.Scene.Any" />
+    <None Include="data-files\scene\wineglass.Scene.Any" />
     <None Include="Doxyfile" />
     <None Include="journal\journal.md.html" />
     <None Include="mainpage.dox" />
